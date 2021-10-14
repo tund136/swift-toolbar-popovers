@@ -10,7 +10,7 @@ import SwiftUI
 
 // Creating extension for popover
 extension View {
-    func toolbarPopover<Content: View>(show: Binding<Bool>, @ViewBuilder content: @escaping () -> Content) -> some View {
+    func toolbarPopover<Content: View>(show: Binding<Bool>, placement: Placement = .leading, @ViewBuilder content: @escaping () -> Content) -> some View {
         self
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay(
@@ -27,13 +27,20 @@ extension View {
                             .padding(.horizontal, 35)
                         // Moving from top
                         // Approx top nav bar height
-                            .offset(x: -20, y: 55)
+                            .offset(y: 55)
+                            .offset(x: placement == .leading ? -20 : 20)
                     }
                     
                 },
-                alignment: .topLeading
+                alignment: placement == .leading ? .topLeading : .topTrailing
             )
     }
+}
+
+// Placement
+enum Placement {
+    case leading
+    case trailing
 }
 
 // Custom Arrow Shape
