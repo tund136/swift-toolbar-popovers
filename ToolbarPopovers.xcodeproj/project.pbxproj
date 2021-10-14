@@ -11,6 +11,7 @@
 		ADB5AB012717EAE300A59D62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB5AB002717EAE300A59D62 /* ContentView.swift */; };
 		ADB5AB032717EAE800A59D62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB5AB022717EAE800A59D62 /* Assets.xcassets */; };
 		ADB5AB062717EAE800A59D62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB5AB052717EAE800A59D62 /* Preview Assets.xcassets */; };
+		ADB5AB0E2717EB5A00A59D62 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB5AB0D2717EB5A00A59D62 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		ADB5AB002717EAE300A59D62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ADB5AB022717EAE800A59D62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADB5AB052717EAE800A59D62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ADB5AB0D2717EB5A00A59D62 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		ADB5AAFD2717EAE300A59D62 /* ToolbarPopovers */ = {
 			isa = PBXGroup;
 			children = (
+				ADB5AB0C2717EB5200A59D62 /* View */,
 				ADB5AAFE2717EAE300A59D62 /* ToolbarPopoversApp.swift */,
 				ADB5AB002717EAE300A59D62 /* ContentView.swift */,
 				ADB5AB022717EAE800A59D62 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				ADB5AB052717EAE800A59D62 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ADB5AB0C2717EB5200A59D62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADB5AB0D2717EB5A00A59D62 /* Home.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB5AB012717EAE300A59D62 /* ContentView.swift in Sources */,
+				ADB5AB0E2717EB5A00A59D62 /* Home.swift in Sources */,
 				ADB5AAFF2717EAE300A59D62 /* ToolbarPopoversApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
