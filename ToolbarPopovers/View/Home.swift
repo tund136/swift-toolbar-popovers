@@ -11,6 +11,7 @@ struct Home: View {
     // Updating Popover Views
     @State private var showGraphicalDate: Bool = false
     @State private var showPicker: Bool = false
+    @State private var show: Bool = false
     
     var body: some View {
         NavigationView {
@@ -24,6 +25,12 @@ struct Home: View {
                 }
             }
             .navigationBarTitle("Popovers")
+        }
+        .toolbarPopover(show: $show) {
+            // Popover View
+            DatePicker("", selection: .constant(Date()))
+                .datePickerStyle(.wheel)
+                .labelsHidden()
         }
     }
 }
