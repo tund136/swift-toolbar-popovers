@@ -17,7 +17,14 @@ extension View {
                 ZStack {
                     if show.wrappedValue {
                         content()
+                            .padding()
+                            .background(Color.white.cornerRadius(15))
+                            .padding(.horizontal, 35)
+                        // Moving from top
+                        // Approx top nav bar height
+                            .offset(x: -20, y: 55)
                     }
+                    
                 },
                 alignment: .topLeading
             )
