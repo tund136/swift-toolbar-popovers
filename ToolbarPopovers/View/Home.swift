@@ -39,10 +39,31 @@ struct Home: View {
             }
         }
         .toolbarPopover(show: $show, placement: .leading) {
-            // Popover View
-            DatePicker("", selection: .constant(Date()))
-                .datePickerStyle(.compact)
+            // Showing dynamic usage
+            if showPicker {
+                Picker(selection: .constant("")) {
+                    ForEach(1...10, id: \.self) { index in
+                        Text("Hello \(index)")
+                            .tag(index)
+                    }
+                } label: {
+                    
+                }
                 .labelsHidden()
+                .pickerStyle(.wheel)
+            } else {
+                if showGraphicalDate {
+                    // Popover View
+                    DatePicker("", selection: .constant(Date()))
+                        .datePickerStyle(.graphical)
+                        .labelsHidden()
+                } else {
+                    // Popover View
+                    DatePicker("", selection: .constant(Date()))
+                        .datePickerStyle(.compact)
+                        .labelsHidden()
+                }
+            }
         }
     }
 }
