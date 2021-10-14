@@ -25,6 +25,18 @@ struct Home: View {
                 }
             }
             .navigationBarTitle("Popovers")
+            // Toolbar
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        withAnimation {
+                            show.toggle()
+                        }
+                    }, label: {
+                        Image(systemName: "slider.horizontal.below.square.fill.and.square")
+                    })
+                }
+            }
         }
         .toolbarPopover(show: $show) {
             // Popover View
