@@ -19,7 +19,7 @@ extension View {
                         content()
                             .padding()
                             .background(
-                                Color.white.clipShape(PopoverArrowShape())
+                                Color.white.clipShape(PopoverArrowShape(placement: placement))
                             )
                         // Shadow
                             .shadow(color: Color.primary.opacity(0.05), radius: 5, x: 5, y: 5)
@@ -45,6 +45,8 @@ enum Placement {
 
 // Custom Arrow Shape
 struct PopoverArrowShape: Shape {
+    var placement: Placement
+    
     func path(in rect: CGRect) -> Path {
         return Path { path in
             let pt1 = CGPoint(x: 0, y: 0)
@@ -61,11 +63,12 @@ struct PopoverArrowShape: Shape {
             path.addArc(tangent1End: pt4, tangent2End: pt1, radius: 15)
             
             // Arrow
-            path.addLine(to: CGPoint(x: 10, y: 0))
+            path.move(to: pt1)
+            path.addLine(to: CGPoint(x: placement == .leading ? 10 : rect.width - 10, y: 0))
             
-            path.addLine(to: CGPoint(x: 15, y: 0))
-            path.addLine(to: CGPoint(x: 25, y: -15))
-            path.addLine(to: CGPoint(x: 40, y: 0))
+            path.addLine(to: CGPoint(x: placement == .leading ? 15 : rect.width - 15, y: 0))
+            path.addLine(to: CGPoint(x: placement == .leading ? 25 : rect.width - 25, y: -15))
+            path.addLine(to: CGPoint(x: placement == .leading ? 40 : rect.width - 40, y: 0))
         }
     }
 }

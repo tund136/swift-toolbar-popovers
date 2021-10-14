@@ -38,10 +38,10 @@ struct Home: View {
                 }
             }
         }
-        .toolbarPopover(show: $show) {
+        .toolbarPopover(show: $show, placement: .leading) {
             // Popover View
             DatePicker("", selection: .constant(Date()))
-                .datePickerStyle(.wheel)
+                .datePickerStyle(.compact)
                 .labelsHidden()
         }
     }
